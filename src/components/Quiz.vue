@@ -3,8 +3,11 @@
     <img id="neec-logo" src="../../public/Logo_NEEC_Blue.png" />
     <h1 id="logo-headline">Web-Dev Quiz</h1>
 		<!-- div#correctAnswers -->
+    <h1 id="question-number"></h1>
+    <h1 id="count-down-timer"></h1>
     <hr class="divider" />
-    <div id="quiz">
+    <input id="start-quiz" type="button" @click.prevent="startQuiz" value="Start Quiz">
+    <div id="quiz" hidden="true">
       <h1 v-html="loading ? 'Loading...' : currentQuestion.question"></h1>  <!-- here we use the ternary operator to check the loading property -->
       <form v-if="currentQuestion">
         <button
@@ -16,7 +19,7 @@
         ></button>
       </form>
     </div>
-    <p id="score"></p>
+    <h1 id="score"></h1>
     <hr class="divider" />
   </div>
 </template>
@@ -30,7 +33,10 @@ export default {
     return {
       questions: [],
       loading: true,
-      index: 0  // initialize index at 0
+      playing: true,
+      index: 0,  // initialize index at 0
+      score: 0,
+      timer: 10
     };
   },
   computed: {
@@ -82,7 +88,8 @@ export default {
       });
       // put data on questions property
       this.questions = data;
-      this.loading = false;     
+      this.loading = false;
+      document.getElementById('question-number').innerHTML = 'Question number ' + (this.index + 1) + '/' + this.questions.length;
     },
     handleButtonClick: function (event) {
       // find index to identify question object in data 
@@ -110,11 +117,6 @@ export default {
 
       // Invoke checkAnswer to check Answer
       this.checkAnswer(event, index);
-      if (this.questions.length - 1 === this.index)
-        setTimeout( () => {
-          document.getElementById('quiz').hidden = true;
-          document.getElementById('score').innerHTML = "Hello World!";
-        }, 3000)
     },
     checkAnswer: function(event, index) {
       let question = this.questions[index];
@@ -124,8 +126,9 @@ export default {
           setTimeout(
             function() {
               this.index += 1;
+              document.getElementById('question-number').innerHTML = 'Question number ' + (this.index + 1) + '/' + this.questions.length;
             }.bind(this),
-            3000
+            1000
           );
         }
       }
@@ -136,6 +139,8 @@ export default {
 
         // Set rightAnswer on question to true, computed property can track a streak out of 10 questions
         this.questions[index].rightAnswer = true;
+
+        this.score++;
       } else {
         // Mark users answer as wrong answer
         event.target.classList.add("wrongAnswer");
@@ -150,6 +155,31 @@ export default {
           }
         });
       }
+      if (this.questions.length - 1 === this.index) {
+        setTimeout( () => {
+          this.playing = false;
+          document.getElementById('quiz').hidden = true;
+          document.getElementById('score').innerHTML = 'You got ' + this.score + ' out of ' + this.questions.length + ' questions right!';
+        }, 1000)
+      }
+    },
+    startQuiz() {
+      document.getElementById('start-quiz').hidden = true;
+      document.getElementById('quiz').hidden = false;
+      this.countDownTimer();
+    },
+    countDownTimer() {
+      document.getElementById('count-down-timer').innerHTML = 'Time remaining: ' + this.timer;
+      let interval = setInterval(() => {
+        this.timer--;
+        if (this.timer === 0 || !(this.playing)) {
+          console.log('Hello World');
+          document.getElementById('quiz').hidden = true;
+          document.getElementById('score').innerHTML = 'You got ' + this.score + ' out of ' + this.questions.length + ' questions right!';
+          clearInterval(interval);
+        }
+        document.getElementById('count-down-timer').innerHTML = 'Time remaining: ' + this.timer;
+      }, 1000);
     }
   },
 	// We want the Component to fetch and store the data, when the Component mounts
