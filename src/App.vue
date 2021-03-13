@@ -1,5 +1,16 @@
 <template>
   <div id="app">
+    <div class="top">
+      <div class="container-left">
+          <img id="logo-neec-full" src="../public/Logo_NEEC_White.png" alt="Logo NEEC Completo">
+      </div>
+
+      <div class="container-center">
+          <h1>Arcade Games</h1>
+      </div>
+
+      <div class="container-right"></div>
+    </div>
     <Quiz />
     <footer>
       <p id="createdBy">
@@ -25,6 +36,62 @@ export default {
   box-sizing: border-box;
   margin: 0;
 }
+
+/* DUARTE CSS - Top bar */
+
+@font-face {
+    font-family: Arcade;
+    src: url(../public/PressStart2P-Regular.ttf);
+}
+
+.top {
+    background-color: #009de0;
+    font-family: Arcade;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.container-left {
+    display: flex;
+    height: 5vh;
+    width: 25vw;
+    text-align: left;
+}
+
+.container-right {
+    display: flex;
+    height: 5vh;
+    width: 25vw;
+    align-items: center;
+}
+
+.container-center {
+    display: flex;
+    height: 5vh;
+}
+
+.top h1 {
+    margin: 0;
+    color: white;
+    font-size: 2.5em;
+    text-align: center;
+    line-height: 5.5vh;
+}
+
+.top img {
+    width: 10em;
+    margin: 5px;
+}
+
+.top a {
+    margin-left: auto;
+    text-decoration: none;
+    color: white;
+}
+
+/* DUARTE CSS END */
 
 #app {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
