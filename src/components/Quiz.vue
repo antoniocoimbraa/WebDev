@@ -4,7 +4,7 @@
     <h1 id="logo-headline">Web-Dev Quiz</h1>
 		<!-- div#correctAnswers -->
     <hr class="divider" />
-    <div>
+    <div id="quiz">
       <h1 v-html="loading ? 'Loading...' : currentQuestion.question"></h1>  <!-- here we use the ternary operator to check the loading property -->
       <form v-if="currentQuestion">
         <button
@@ -15,8 +15,9 @@
           @click.prevent="handleButtonClick"
         ></button>
       </form>
-      <hr class="divider" />
     </div>
+    <p id="score"></p>
+    <hr class="divider" />
   </div>
 </template>
 
@@ -50,13 +51,15 @@ export default {
     async fetchQuestions() {
       this.loading = true;
 
-      // fetch the questions
+      /* // fetch the questions
       let response = await fetch("https://opentdb.com/api.php?amount=10&category=9");
 
       // convert questions to json
-      let jsonResponse = await response.json();
+      let jsonResponse = await response.json(); */
 
-      let index = 0; // index is used to identify isngle answer 
+      let jsonResponse = require('../../public/Quiz.json');
+
+      let index = 0; // index is used to identify single answer 
 
       // manipulate questions
       let data = jsonResponse.results.map((question) => {
@@ -107,6 +110,11 @@ export default {
 
       // Invoke checkAnswer to check Answer
       this.checkAnswer(event, index);
+      if (this.questions.length - 1 === this.index)
+        setTimeout( () => {
+          document.getElementById('quiz').hidden = true;
+          document.getElementById('score').innerHTML = "Hello World!";
+        }, 3000)
     },
     checkAnswer: function(event, index) {
       let question = this.questions[index];
@@ -274,6 +282,7 @@ button.showRightAnswer {
 h1 {
   font-size: 1.3rem;
   padding: 0.7rem;
+  text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 .divider {
