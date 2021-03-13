@@ -1,6 +1,6 @@
 <template>
   <div id="quiz-container">
-    <img id="neec-logo" src="https://trello-attachments.s3.amazonaws.com/5ee246d2f9e77b24024f96be/823x196/e6e1e0736562ad5f8c150f42ee64052a/%5BLogo%5D_NEEC_Blue.png" />
+    <img id="neec-logo" src="../../public/Logo_NEEC_Blue.png" />
     <h1 id="logo-headline">Web-Dev Quiz</h1>
 		<!-- div#correctAnswers -->
     <hr class="divider" />

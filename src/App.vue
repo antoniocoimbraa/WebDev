@@ -6,10 +6,12 @@
       </div>
 
       <div class="container-center">
-          <h1>Arcade Games</h1>
+          <h1>Speed Quiz</h1>
       </div>
 
-      <div class="container-right"></div>
+      <div class="container-right">
+        <a href="http://neecist.org/games">Back</a>
+      </div>
     </div>
     <Quiz />
     <footer>
@@ -106,10 +108,17 @@ footer {
   padding: 0.5rem 1rem;
   width: 100%;
   font-size: 0.7rem;
-  background-color: rgb(102, 163, 255);
+  background-color: #009de0;
 }
 
 #createdBy {
   float: right;
+  color: white;
+  font-weight: bold;
+}
+
+#createdBy a {
+  color: white;
+  font-weight: bold;
 }
 </style>
