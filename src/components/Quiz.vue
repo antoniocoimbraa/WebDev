@@ -36,7 +36,7 @@ export default {
       playing: true,
       index: 0,  // initialize index at 0
       score: 0,
-      timer: 10
+      timer: 1000
     };
   },
   computed: {
@@ -75,19 +75,35 @@ export default {
           question.correct_answer,
           ...question.incorrect_answers,
         ];
+        
         // shuffle question.answers array
         for (let i = question.answers.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i+1));
           [question.answers[i], question.answers[j]] = [question.answers[j], question.answers[i],];
         }
+
         // add rightAnswer and key property to each question 
         question.rightAnswer = null;
         question.key = index;
         index++;
         return question;
       });
+
+
+      
+
       // put data on questions property
       this.questions = data;
+      console.log(this.questions);
+
+      for (let i = this.questions.length - 1; i > 0; i--) {
+          const k = Math.floor(Math.random() * (i+1));
+          [this.questions[i], this.questions[k]] = [this.questions[k], this.questions[i],];
+        }
+            // this.questions.sort(() => Math.random() - 0.5);
+      console.log(Math.random() - 0.5);
+      console.log(this.questions); 
+
       this.loading = false;
       document.getElementById('question-number').innerHTML = 'Question number ' + (this.index + 1) + '/' + this.questions.length;
     },
@@ -132,6 +148,8 @@ export default {
           );
         }
       }
+      console.log(question.userAnswer);
+      console.log(question.correct_answer);
       if (question.userAnswer === question.correct_answer) {
 
         // Set class on Button if user answered right, to celebrate right answer with animation joyfulButton
