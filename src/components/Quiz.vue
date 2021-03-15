@@ -3,7 +3,7 @@
 		<img id="neec-logo" src="../../public/Logo_NEEC_Blue.png" />
 		<h1 id="logo-headline">Web-Dev Quiz</h1>
 		<!-- div#correctAnswers -->
-		<h1 id="question-number" hidden="true"></h1>
+		<h1 id="question-number"></h1>
 		<h1 id="count-down-timer"></h1>
 		<hr class="divider" />
 		<input
@@ -62,6 +62,12 @@ export default {
 		async fetchQuestions() {
 			this.loading = true;
 
+			/* // fetch the questions
+		let response = await fetch("https://opentdb.com/api.php?amount=10&category=9");
+
+		// convert questions to json
+		let jsonResponse = await response.json(); */
+
 			let jsonResponse = require("../../public/Quiz.json");
 
 			let index = 0; // index is used to identify single answer
@@ -90,9 +96,37 @@ export default {
 				return question;
 			});
 
+			/////////
+			let arr = [];
+			for (let i = 0; i < data.length; i++) {
+				arr.push(i);
+			}
+			var currentIndex = arr.length, temporaryValue, randomIndex;
+
+			// While there remain elements to shuffle...
+			while (0 !== currentIndex) {
+
+				// Pick a remaining element...
+				randomIndex = Math.floor(Math.random() * currentIndex);
+				currentIndex -= 1;
+
+				// And swap it with the current element.
+				temporaryValue = arr[currentIndex];
+				arr[currentIndex] = arr[randomIndex];
+				arr[randomIndex] = temporaryValue;
+			}
+			/////////
+			var newdata = [];
+
+			for(let i = 0; i < arr.length; i++) {
+				newdata.push(data[arr[i]]);
+			}
+			//console.log("previous data: " + data);
+			//console.log("new data: " + newdata);
+
 			// put data on questions property
-			this.questions = data;
-			console.log(this.questions);
+			this.questions = newdata;
+			//console.log(this.questions);
 
 			// shuffle questions
 			/* for (let i = this.questions.length - 1; i > 0; i--) {
@@ -103,8 +137,8 @@ export default {
 				];
 			} */
 			// this.questions.sort(() => Math.random() - 0.5);
-			console.log(Math.random() - 0.5);
-			console.log(this.questions);
+			// console.log(Math.random() - 0.5);
+			// console.log(this.questions);
 
 			this.loading = false;
 			document.getElementById("question-number").innerHTML =
@@ -115,7 +149,7 @@ export default {
 		},
 		handleButtonClick: function (event) {
 			// find index to identify question object in data
-			let index = event.target.getAttribute("index");
+			let index = this.index; //event.target.getAttribute("index");
 
 			// innerHTML is polluted with decoded HTML entities e.g ' from &#039;
 			let pollutedUserAnswer = event.target.innerHTML;
@@ -142,6 +176,7 @@ export default {
 		},
 		checkAnswer: function (event, index) {
 			let question = this.questions[index];
+			//console.log("Questions here: " + JSON.stringify(this.questions) + "\nIndex here: " + this.index);
 
 			if (question.userAnswer) {
 				if (this.index < this.questions.length - 1) {
@@ -160,8 +195,8 @@ export default {
 					);
 				}
 			}
-			console.log(question.userAnswer);
-			console.log(question.correct_answer);
+			//console.log(question.userAnswer);
+			//console.log("index: " + this.index + "\n" + question.correct_answer);
 			if (question.userAnswer === question.correct_answer) {
 				// Set class on Button if user answered right, to celebrate right answer with animation joyfulButton
 				event.target.classList.add("rightAnswer");
@@ -203,7 +238,6 @@ export default {
 		startQuiz() {
 			document.getElementById("start-quiz").hidden = true;
 			document.getElementById("quiz").hidden = false;
-			document.getElementById("question-number").hidden = false;
 			this.countDownTimer();
 		},
 		countDownTimer() {
