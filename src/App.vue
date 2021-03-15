@@ -47,6 +47,9 @@ export default {
 }
 
 .top {
+    position: relative;
+    top: 0;
+    width: 100%;
     background-color: #009de0;
     font-family: Arcade;
     font-size: 14px;
@@ -57,39 +60,46 @@ export default {
 
 .container-left {
     display: flex;
-    height: 5vh;
-    width: 25vw;
+    height: auto;
+    width: 15vw;
     text-align: left;
 }
 
 .container-right {
     display: flex;
-    height: 5vh;
-    width: 25vw;
+    height: auto;
+    width: 15vw;
     align-items: center;
 }
 
 .container-center {
     display: flex;
-    height: 5vh;
+    height: auto;
+    width: auto;
 }
 
 .top h1 {
-    margin: 0;
+    margin: 5px;
     color: white;
     font-size: 2.5em;
     text-align: center;
-    line-height: 5.5vh;
 }
 
 .top img {
-    width: 10em;
-    margin: 5px;
+    width: 10vw;
+    margin-right: auto;
+    margin-left: 0.5vw;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .top a {
     margin-left: auto;
+    margin-right: 0.5vw;
+    margin-top: auto;
+    margin-bottom: auto;
     text-decoration: none;
+    text-align: end;
     color: white;
 }
 

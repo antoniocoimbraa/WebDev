@@ -3,7 +3,7 @@
 		<img id="neec-logo" src="../../public/Logo_NEEC_Blue.png" />
 		<h1 id="logo-headline">Web-Dev Quiz</h1>
 		<!-- div#correctAnswers -->
-		<h1 id="question-number"></h1>
+		<h1 id="question-number" hidden="true"></h1>
 		<h1 id="count-down-timer"></h1>
 		<hr class="divider" />
 		<input
@@ -61,12 +61,6 @@ export default {
 		//this method is used to fetch the questions, manipulate them, and store them in the questions array
 		async fetchQuestions() {
 			this.loading = true;
-
-			/* // fetch the questions
-      let response = await fetch("https://opentdb.com/api.php?amount=10&category=9");
-
-      // convert questions to json
-      let jsonResponse = await response.json(); */
 
 			let jsonResponse = require("../../public/Quiz.json");
 
@@ -209,6 +203,7 @@ export default {
 		startQuiz() {
 			document.getElementById("start-quiz").hidden = true;
 			document.getElementById("quiz").hidden = false;
+			document.getElementById("question-number").hidden = false;
 			this.countDownTimer();
 		},
 		countDownTimer() {
