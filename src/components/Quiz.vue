@@ -42,7 +42,7 @@ export default {
 			playing: true,
 			index: 0, // initialize index at 0
 			score: 0,
-			timer: 1000,
+			timer: 30,
 		};
 	},
 	computed: {
@@ -100,13 +100,14 @@ export default {
 			this.questions = data;
 			console.log(this.questions);
 
-			for (let i = this.questions.length - 1; i > 0; i--) {
+			// shuffle questions
+			/* for (let i = this.questions.length - 1; i > 0; i--) {
 				const k = Math.floor(Math.random() * (i + 1));
 				[this.questions[i], this.questions[k]] = [
 					this.questions[k],
 					this.questions[i],
 				];
-			}
+			} */
 			// this.questions.sort(() => Math.random() - 0.5);
 			console.log(Math.random() - 0.5);
 			console.log(this.questions);
