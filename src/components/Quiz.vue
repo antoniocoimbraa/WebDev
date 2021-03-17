@@ -12,6 +12,12 @@
 			@click.prevent="startQuiz"
 			value="Start Quiz"
 		/>
+		<button id="custom-quiz" @click.prevent="customQuizInput">
+			Custom Quiz
+		</button>
+		<input id="file-input" type="file" accept=".txt" hidden="true" />
+		<button id="choose-file" hidden="true">Upload Your Custom Quiz</button>
+		<input id="submit" type="submit" hidden="true" />
 		<div id="quiz" hidden="true">
 			<h1 v-html="loading ? 'Loading...' : currentQuestion.question"></h1>
 			<!-- here we use the ternary operator to check the loading property -->
@@ -101,11 +107,12 @@ export default {
 			for (let i = 0; i < data.length; i++) {
 				arr.push(i);
 			}
-			var currentIndex = arr.length, temporaryValue, randomIndex;
+			var currentIndex = arr.length,
+				temporaryValue,
+				randomIndex;
 
 			// While there remain elements to shuffle...
 			while (0 !== currentIndex) {
-
 				// Pick a remaining element...
 				randomIndex = Math.floor(Math.random() * currentIndex);
 				currentIndex -= 1;
@@ -118,7 +125,7 @@ export default {
 			/////////
 			var newdata = [];
 
-			for(let i = 0; i < arr.length; i++) {
+			for (let i = 0; i < arr.length; i++) {
 				newdata.push(data[arr[i]]);
 			}
 			//console.log("previous data: " + data);
@@ -237,6 +244,7 @@ export default {
 		},
 		startQuiz() {
 			document.getElementById("start-quiz").hidden = true;
+			document.getElementById("custom-quiz").hidden = true;
 			document.getElementById("quiz").hidden = false;
 			this.countDownTimer();
 		},
@@ -260,6 +268,27 @@ export default {
 					"Time remaining: " + this.timer;
 			}, 1000);
 		},
+		customQuizInput() {
+			document.getElementById("start-quiz").hidden = true;
+			document.getElementById("custom-quiz").hidden = true;
+			const fileInput = document.getElementById("file-input");
+			const inputButton = document.getElementById("choose-file");
+			const submitButton = document.getElementById("submit");
+
+			inputButton.hidden = false;
+			submitButton.hidden = false;
+
+			inputButton.addEventListener("click", fileInput.click());
+			fileInput.addEventListener("change", function () {
+				if (fileInput.value) {
+					fileInput.innerHTML = fileInput.value.str
+						.split(/(\\|\/)/g)
+						.pop();
+				} else if (fileInput.value.split.pop() != ".txt") {
+					fileInput.innerHTML = "Invalid File Type";
+				}
+			});
+		},
 	},
 	// We want the Component to fetch and store the data, when the Component mounts
 	mounted() {
@@ -278,6 +307,7 @@ form {
 
 button {
 	font-size: 1.1rem;
+	font-weight: bold;
 	box-sizing: border-box;
 	padding: 1rem;
 	margin: 0.3rem;
@@ -286,6 +316,7 @@ button {
 	border: none;
 	border-radius: 0.4rem;
 	box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
 }
 
 button:hover:enabled {
@@ -402,8 +433,9 @@ h1 {
 	box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-#start-quiz {
+input {
 	font-size: 1.1rem;
+	font-weight: bold;
 	box-sizing: border-box;
 	padding: 1rem;
 	margin: 1rem;
@@ -412,5 +444,6 @@ h1 {
 	border: none;
 	border-radius: 0.4rem;
 	box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
 }
 </style>
