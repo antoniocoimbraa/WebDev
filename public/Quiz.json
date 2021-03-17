@@ -1,179 +1,214 @@
 {
     "results": [
         {
-            "question":"Quando foi a 1ª edição das JEECs?",
-            "correct_answer":"2000",
-            "incorrect_answers":["1999","2003","2001"]
+            "question": "Em que ano se registou o primeiro uso de cassetes?",
+            "correct_answer": "1938",
+            "incorrect_answers": ["1969","1960","1945"]
         },
         {
-            "question":"Quantos episódios das NEECtalks existem?",
-            "correct_answer":"9",
-            "incorrect_answers":["8","7","10"]
+            "question": "Quem apresentou o primeiro circuito integrado ao mundo?",
+            "correct_answer": "Jack Kilby",
+            "incorrect_answers": ["Phillip Miller","Graham Bell","Margaret Hamilton"]
         },
         {
-            "question":"Qual destes não é um dos workshops do NEEC?",
-            "correct_answer":"R",
-            "incorrect_answers":["Python","Matlab","Arduino"]
+            "question": "Qual o nome da primeira rede de internet criada?",
+            "correct_answer": "Arpanet",
+            "incorrect_answers": ["Intranet","Debinet","Pentcon"]
         },
         {
-            "question":"Quantos membros tem o NEEC?",
-            "correct_answer":"21",
-            "incorrect_answers":["15","17","23"]
+            "question": "Que empresa comercializou o primeiro microprocessador?",
+            "correct_answer": "Intel",
+            "incorrect_answers": ["Toshiba","Dell","Ericsson"]
         },
         {
-            "question":"Quantas áreas de Mestrado existem em MEEC?",
-            "correct_answer":"5",
-            "incorrect_answers":["4","8","7"]
+            "question": "Quantos jogos foram jogados na ultima game night do NEEC?",
+            "correct_answer": "6",
+            "incorrect_answers": ["3","4","5"]
         },
         {
-            "question":"Anualmente quantas vagas há em MEEC?",
-            "correct_answer":"250",
-            "incorrect_answers":["220","230","240"]
+            "question": "Que ambiente é simulado na NEECATHON?",
+            "correct_answer": "StartUp",
+            "incorrect_answers": ["Empresarial","Investigação","Connection"]
         },
         {
-            "question":"Quando é que foi inventado o MOSFET?",
-            "correct_answer":"1947",
-            "incorrect_answers":["1975","1954","1987"]
+            "question": "Quantos anos tem o NEEC?",
+            "correct_answer": "18",
+            "incorrect_answers": ["20","16","22"]
         },
         {
-            "question": "Quem é que inventou o Linux?",
-            "correct_answer": "Linus Torvald",
-            "incorrect_answers": ["Steve Jobs","Gil Eanes","Garry Larson"]
+            "question": "Quem é considerado o inventor do rádio?",
+            "correct_answer": "Guglielmo Marconi",
+            "incorrect_answers": ["Karl Braun","James Maxwell","Reginald Fessenden"]
         },
         {
-            "question": "Quem foi o 1º/ª convidado/a das NEECtalks?",
-            "correct_answer": "Catarina Silva",
-            "incorrect_answers": ["Núcleo de Jogos do IST","Carlos e Espadinha","Rui Figueiredo"]
+            "question": "Qual destas pessoas é fundador da Microsoft?",
+            "correct_answer": "Paul Allen",
+            "incorrect_answers": ["Tim Cook","Steve Blank","Pierre Omidyar"]
         },
         {
-            "question": "Quantos campi do ist existem?",
-            "correct_answer": "3",
-            "incorrect_answers": ["2","4","10"]
+            "question": "A equipa fundadora da Unbabel é de que nacionalidade?",
+            "correct_answer": "Portuguesa",
+            "incorrect_answers": ["Alemã","Francesa","Italiana"]
         },
         {
-            "question": "Qual é o comando que deves fazer para autenticar no discord de meec?",
-            "correct_answer": "!cadeiras",
-            "incorrect_answers": ["!registar","!register","!authenticate"]
+            "question": "Que curso tirou o atual Secretário Geral das Nações Unidas, António Guterees?",
+            "correct_answer": "MEEC",
+            "incorrect_answers": ["MEC","LEIC","MAer"]
         },
         {
-            "question": "Qual a legenda da estatua em frente da torre norte?",
-            "correct_answer": "Engenharia",
-            "incorrect_answers": ["Estátua","Eletricidade","Deusa do Conhecimento"]
+            "question": "Qual a nacionalidade do fundador da Farfetch?",
+            "correct_answer": "Portuguesa",
+            "incorrect_answers": ["Holandesa","Alemã","Inglesa"]
         },
         {
-            "question": "Que cientista famoso aparecia no logo original da apple?",
-            "correct_answer": "Newton",
-            "incorrect_answers": ["Einstein","Maxwell","Feynman"]
+            "question": "Qual destas pessoas não é um fundador do Youtube?",
+            "correct_answer": "Marc Randolph",
+            "incorrect_answers": ["Jawed Karim","Steve Chen","Chad Hurley"]
         },
         {
-            "question": "Qual é a sala da sede do NEEC?",
-            "correct_answer": "4.12",
-            "incorrect_answers": ["4.24","4.25","3.13"]
+            "question": "Quantos veículos da Tesla foram vendidos no mundo em 2020?",
+            "correct_answer": "499 mil",
+            "incorrect_answers": ["350 mil","634 mil","271 mil"]
         },
         {
-            "question": "Qual é a estação de metro mais perto do pavilhao central?",
-            "correct_answer": "Alameda",
-            "incorrect_answers": ["Saldanha","Arroios","Oriente"]
+            "question": "Qual é a linguagem de programação mais popular destas quatro, em 2020/2021?",
+            "correct_answer": "Python",
+            "incorrect_answers": ["C","R","PHP"]
         },
         {
-            "question": "Quantos pavilhoes tem o Técnico?",
-            "correct_answer": "23",
-            "incorrect_answers": ["2","10","32"]
+            "question": "Qual é a Lei de Ohm?",
+            "correct_answer": "U=RI",
+            "incorrect_answers": ["R=UI","R=2I+U","U=2R+I"]
         },
         {
-            "question": "como se chama a mascote do NEEC?",
-            "correct_answer": "NEECbot",
-            "incorrect_answers": ["NEECo","Cãopitão NEEC","NEECachu"]
+            "question": "Em que ano foi vendido o primeiro Macintosh?",
+            "correct_answer": "1984",
+            "incorrect_answers": ["1973","1987","1977"]
         },
         {
-            "question": "Quantos degraus tem a escada à entrada da torre norte?",
-            "correct_answer": "19",
-            "incorrect_answers": ["3","25","17"]
+            "question": "Em que ano foi fundado o IST?",
+            "correct_answer": "1911",
+            "incorrect_answers": ["1913","1920","1923"]
         },
         {
-            "question": "Qual a maior sala do campus Alameda?",
-            "correct_answer": "Salão Nobre",
-            "incorrect_answers": ["QA","GA5","Centro de Congressos"]
+            "question": "Quantos fusos horários tem a Rússia?",
+            "correct_answer": "11",
+            "incorrect_answers": ["7","6","9"]
         },
         {
-            "question": "Quem foi o 2º/ª convidado/a das NEECtalks?",
-            "correct_answer": "Núcleo de Jogos do IST",
-            "incorrect_answers": ["Catarina Silva","João Caldas","TSB"]
+            "question": "Qual é o animal nacional da Austrália?",
+            "correct_answer": "Canguru-vermelho",
+            "incorrect_answers": ["Koala","Tucano","Formiga"]
         },
         {
-            "question": "Qual o nº de lugares de estacionamento no campus da alameda?",
-            "correct_answer": "70",
-            "incorrect_answers": ["120","90","3"]
+            "question": "Qual dos seguintes impérios não tinha uma língua escrita?",
+            "correct_answer": "Inca",
+            "incorrect_answers": ["Azteca","Egípcio","Romano"]
         },
         {
-            "question": "Como se chama a casa no jardim em frente da torre norte?",
-            "correct_answer": "ciist",
-            "incorrect_answers": ["casa do pasto","perdidos e achados","serviços secretos"]
+            "question": "Que país tem mais ilhas no mundo?",
+            "correct_answer": "Suécia",
+            "incorrect_answers": ["Grécia","Turquia","Estados Unidos"]
         },
         {
-            "question": "Qual a lotação oficial das salas de estudo de Civil??",
-            "correct_answer": "0",
-            "incorrect_answers": ["20","24","18"]
+            "question": "Quantas teclas tem um piano clássico?",
+            "correct_answer": "88",
+            "incorrect_answers": ["74","62","92"]
         },
         {
-            "question": "Quantos pisos tem o Pavilhão de Civil?",
-            "correct_answer": "8",
-            "incorrect_answers": ["7","9","6"]
+            "question": "Que matemático e geógrafo grego calculou o perímetro da Terra em 240 a.C.?",
+            "correct_answer": "Eratóstenes",
+            "incorrect_answers": ["Descartes","Sócrates","Sófocles"]
         },
         {
-            "question": "Quantos pisos tem a torre norte?",
-            "correct_answer": "16",
-            "incorrect_answers": ["12","11","10"]
+            "question": "Segundo o tratado assinado em 1971, que região do planeta ficou interdita a armas nucleares?",
+            "correct_answer": "Antártida",
+            "incorrect_answers": ["Sara","África","Bahamas"]
         },
         {
-            "question": "Quantos créditos tem a Licenciatura?",
-            "correct_answer": "180",
-            "incorrect_answers": ["184.5","240","120"]
+            "question": "Por que nome se tornou mais conhecido o escritor norte-americano Samuel Langhorne Clemens?",
+            "correct_answer": "Mark Twain",
+            "incorrect_answers": ["Paul Auster","Paulo Coelho","Nicolau Gogol"]
         },
         {
-            "question": "Quem foi o 3º/ª convidado/a das NEECtalks?",
-            "correct_answer": "Miguel de Moura",
-            "incorrect_answers": ["Núcleo de Jogos do IST","Catarina Silva","Rui Figueiredo"]
+            "question": "Que expressão alemã significa “guerra-relâmpago”?",
+            "correct_answer": "Blitzkrieg",
+            "incorrect_answers": ["Sauerkraut","Glasnost","Reichstag"]
         },
         {
-            "question": "Como se chamam as equipas a qual te podes juntar na app das JEECs?",
-            "correct_answer": "squads",
-            "incorrect_answers": ["teams","equipas","amigos"]
+            "question": "Como se chamou o Sporting Club de Portugal entre 1904 e 1906?",
+            "correct_answer": "Campo Grande Football Club",
+            "incorrect_answers": ["Sporting de Portugal","Não teve nome","Leões da Estrela"]
         },
         {
-            "question": "Qual é o tema da última NEECuriosity?",
-            "correct_answer": "Galáxias",
-            "incorrect_answers": ["Energia nuclear","Ciber segurança","Sonda maven"]
+            "question": "Junto a que cidade do Novo México se julga ter caído um OVNI em 1947?",
+            "correct_answer": "Roswell",
+            "incorrect_answers": ["Tijuana","Las Vegas","Chihuahua"]
         },
         {
-            "question": "Quem foi o 4º/ª convidado/a das NEECtalks?",
-            "correct_answer": "Carlos e Espadinha",
-            "incorrect_answers": ["Pedro Machado","João Caldas","Rui Figueiredo"]
+            "question": "Em Portugal, a que cidadãos foi retirado o direito de voto em 1913?",
+            "correct_answer": "Analfabetos",
+            "incorrect_answers": ["Mulheres","Emigrantes","Idosos"]
         },
         {
-            "question": "Quantos pontos são necessários para ganhar uma caneta das JEECs?",
-            "correct_answer": "300",
-            "incorrect_answers": ["250","100","150"]
+            "question": "Qual é o mais famoso detetive criado por Raymond Chandler?",
+            "correct_answer": "Philip Marlowe",
+            "incorrect_answers": ["Hercule Poirot","Sherlock Holmes","Agatha Christie"]
         },
         {
-            "question": "Em que ano nasceu Michael Faraday?",
-            "correct_answer": "1791",
-            "incorrect_answers": ["1823","1814","1845"]
+            "question": "Em que atividade se destacou Le Corbusier?",
+            "correct_answer": "Arquitetura",
+            "incorrect_answers": ["Cinema","Teatro","Literatura"]
         },
         {
-            "question": "Em 1865, quando Maxwell formulou as suas equações, quantas eram?",
-            "correct_answer": "20",
-            "incorrect_answers": ["4","6","13"]
+            "question": "Que parque natural na região de Bragança foi criado em 1979?",
+            "correct_answer": "Montesinho",
+            "incorrect_answers": ["Peneda-Gerês","Alto Douro","Arrábida"]
         },
         {
-            "question": "Quem foi o 5º/ª convidado/a das NEECtalks?",
-            "correct_answer": "João Caldas",
-            "incorrect_answers": ["Catarina Silva","Núcleo de Jogos do IST","Carlos e Espadinha"]
+            "question": "Como se chama a personagem principal do filme Touro Enraivecido?",
+            "correct_answer": "Jake La Motta",
+            "incorrect_answers": ["Sugar Ray Robinson","Belarmino","Muhamad Ali"]
         },
         {
-            "question": "Em que ano nasceu James Maxwell?",
-            "correct_answer": "1831",
-            "incorrect_answers": ["1923","1875","2005"]
+            "question": "Quanto tempo demora a Lua a dar a volta à Terra (período orbital)?",
+            "correct_answer": "27 dias e 8 horas",
+            "incorrect_answers": ["25 dias","30 dias","29 dias e 12 horas"]
+        },
+        {
+            "question": "Quem recebeu um prémio Nobel devido ao desenvolvimento da encefalografia arterial?",
+            "correct_answer": "Egas Moniz",
+            "incorrect_answers": ["Júlio de Matos","Michael Faraday","Sousa Martins"]
+        },
+        {
+            "question": "Que eletrodoméstico foi criado por Murray Spangler em 1907 e que ainda hoje é vendido praticamente inalterado?",
+            "correct_answer": "Aspirador",
+            "incorrect_answers": ["Esquentador","Torradeira","Micro-ondas"]
+        },
+        {
+            "question": "Que modalidade desportiva foi introduzida em Portugal Continental em 1888 por Guilherme Pinto Basto?",
+            "correct_answer": "Futebol",
+            "incorrect_answers": ["Corfebol","Ténis","Andebol"]
+        },
+        {
+            "question": " Qual é o objeto de estudo do puericultor?",
+            "correct_answer": "Crianças",
+            "incorrect_answers": ["Coelhos","Abelhas","Galinhas"]
+        },
+        {
+            "question": "Que país sul-americano é o maior produtor de vinho?",
+            "correct_answer": "Argentina",
+            "incorrect_answers": ["Canadá","Brasil","Venezuela"]
+        },
+        {
+            "question": "Quem comandou a segunda invasão napoleónica em Portugal?",
+            "correct_answer": "Soult",
+            "incorrect_answers": ["Napoleão","Junot","Wellington"]
+        },
+        {
+            "question": "Qual é a corrente filosófica defendida por Martin Heidegger?",
+            "correct_answer": "Existencialismo",
+            "incorrect_answers": ["Positivismo","Niilismo","Abstracionismo"]
         }
     ]
 }
