@@ -6,21 +6,12 @@
 		<h1 id="question-number"></h1>
 		<h1 id="count-down-timer"></h1>
 		<hr class="divider" />
-		<button id="start-quiz" @click.prevent="startQuiz">Start Quiz</button>
-		<button id="custom-quiz" @click.prevent="customQuiz">
-			Custom Quiz
-		</button>
-		<form>
-			<input id="file-input" type="file" accept=".txt" hidden="true" />
-			<label id="upload-label" for="file-input" hidden="true">
-				Upload Your Custom Quiz
-			</label>
-			<input id="submit-input" type="submit" hidden="true" />
-			<label id="submit-label" for="submit-input" hidden="true">
-				Submit
-			</label>
-		</form>
-
+		<input
+			id="start-quiz"
+			type="button"
+			@click.prevent="startQuiz"
+			value="Start Quiz"
+		/>
 		<div id="quiz" hidden="true">
 			<h1 v-html="loading ? 'Loading...' : currentQuestion.question"></h1>
 			<!-- here we use the ternary operator to check the loading property -->
@@ -110,12 +101,11 @@ export default {
 			for (let i = 0; i < data.length; i++) {
 				arr.push(i);
 			}
-			var currentIndex = arr.length,
-				temporaryValue,
-				randomIndex;
+			var currentIndex = arr.length, temporaryValue, randomIndex;
 
 			// While there remain elements to shuffle...
 			while (0 !== currentIndex) {
+
 				// Pick a remaining element...
 				randomIndex = Math.floor(Math.random() * currentIndex);
 				currentIndex -= 1;
@@ -128,7 +118,7 @@ export default {
 			/////////
 			var newdata = [];
 
-			for (let i = 0; i < arr.length; i++) {
+			for(let i = 0; i < arr.length; i++) {
 				newdata.push(data[arr[i]]);
 			}
 			//console.log("previous data: " + data);
@@ -247,7 +237,6 @@ export default {
 		},
 		startQuiz() {
 			document.getElementById("start-quiz").hidden = true;
-			document.getElementById("custom-quiz").hidden = true;
 			document.getElementById("quiz").hidden = false;
 			this.countDownTimer();
 		},
@@ -271,30 +260,6 @@ export default {
 					"Time remaining: " + this.timer;
 			}, 1000);
 		},
-		customQuiz() {
-			const uploadLabel = document.getElementById("upload-label");
-			const submitLabel = document.getElementById("submit-label");
-			const fileInput = document.getElementById("submit-button");
-			const submitInput = document.getElementById("submit-input");
-
-			document.getElementById("start-quiz").hidden = true;
-			document.getElementById("custom-quiz").hidden = true;
-			uploadLabel.hidden = false;
-			submitLabel.hidden = false;
-
-			// Ignorem isto, queria verificar a validade do input file type e
-			// mudar o HTML para o nome do novo file, mas não deu ainda (Adrian)
-			fileInput.addEventListener("change", function () {
-				if (fileInput.value) {
-					uploadLabel.innerHTML = fileInput.value.str
-						.split(/(\\|\/)/g)
-						.pop();
-				} else if (fileInput.value.split.pop() != ".txt") {
-					uploadLabel.innerHTML = "Invalid File Type";
-				}
-			});
-			submitInput.addEventListener("click", console.log(fileInput.value));
-		},
 	},
 	// We want the Component to fetch and store the data, when the Component mounts
 	mounted() {
@@ -313,7 +278,6 @@ form {
 
 button {
 	font-size: 1.1rem;
-	font-weight: 700;
 	box-sizing: border-box;
 	padding: 1rem;
 	margin: 0.3rem;
@@ -322,10 +286,9 @@ button {
 	border: none;
 	border-radius: 0.4rem;
 	box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
-	cursor: pointer;
 }
 
-button:hover {
+button:hover:enabled {
 	transform: scale(1.02);
 	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
 		0 3px 1px -1px rgba(0, 0, 0, 0.2);
@@ -439,23 +402,15 @@ h1 {
 	box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-label {
+#start-quiz {
 	font-size: 1.1rem;
-	font-weight: 700;
 	box-sizing: border-box;
 	padding: 1rem;
-	margin: 0.3rem;
+	margin: 1rem;
 	width: 47%;
 	background-color: rgba(100, 100, 100, 0.3);
 	border: none;
 	border-radius: 0.4rem;
 	box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
-	cursor: pointer;
-}
-
-label:hover {
-	transform: scale(1.02);
-	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
-		0 3px 1px -1px rgba(0, 0, 0, 0.2);
 }
 </style>
