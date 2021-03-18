@@ -13,11 +13,11 @@
 		<form>
 			<input id="file-input" type="file" accept=".txt" hidden="true" />
 			<label id="upload-label" for="file-input" hidden="true">
-			Upload Your Custom Quiz
+				Upload Your Custom Quiz
 			</label>
 			<input id="submit-input" type="submit" hidden="true" />
 			<label id="submit-label" for="submit-input" hidden="true">
-			Submit
+				Submit
 			</label>
 		</form>
 
@@ -33,15 +33,15 @@
 					@click.prevent="handleButtonClick"
 				></button>
 			</form>
-		</div >
+		</div>
 		<h1 id="score" hidden="true"></h1>
 		<hr class="divider" />
-	</div >
-</template >
+	</div>
+</template>
 
 
 <script>
-		export default {
+export default {
 	name: "Quiz",
 	// data() function stores state variables
 	data() {
@@ -51,7 +51,7 @@
 			playing: true,
 			index: 0, // initialize index at 0
 			score: 0,
-			timer: 10,
+			timer: 30,
 		};
 	},
 	computed: {
@@ -213,13 +213,13 @@
 
 				// Set rightAnswer on question to true, computed property can track a streak out of 10 questions
 				this.questions[index].rightAnswer = true;
-				this.timer=this.timer+5;
+
 				this.score++;
 			} else {
 				// Mark users answer as wrong answer
 				event.target.classList.add("wrongAnswer");
 				this.questions[index].rightAnswer = false;
-				this.timer--;
+
 				// Show right Answer
 				let correctAnswer = this.questions[index].correct_answer;
 				let allButtons = document.querySelectorAll(
@@ -304,7 +304,7 @@
 </script>
 
 <style scoped>
-		form {
+form {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
