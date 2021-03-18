@@ -20,6 +20,7 @@
 					v-for="answer in currentQuestion.answers"
 					:index="currentQuestion.key"
 					:key="answer"
+					:qgroup="index"  
 					v-html="answer"
 					@click.prevent="handleButtonClick"
 				></button>
@@ -42,7 +43,7 @@ export default {
 			playing: true,
 			index: 0, // initialize index at 0
 			score: 0,
-			timer: 30,
+			timer: 10,
 		};
 	},
 	computed: {
@@ -163,12 +164,16 @@ export default {
 			// set class "clicked" on button with userAnswer -> for CSS Styles
 			// disable other sibling buttons
 			event.target.classList.add("clicked");
-			let allButtons = document.querySelectorAll(`[index="${index}"]`);
+			// let allButtons = document.querySelectorAll(`[index="${index}"]`);
 
+			
+			let allButtons = document.querySelectorAll(`[qgroup="${index}"]`);
+
+		
 			for (let i = 0; i < allButtons.length; i++) {
 				if (allButtons[i] === event.target) continue;
 
-				allButtons[i].setAttribute("disabled", "");
+				allButtons[i].setAttribute("disabled", "disabled");
 			}
 
 			// Invoke checkAnswer to check Answer
@@ -203,12 +208,16 @@ export default {
 
 				// Set rightAnswer on question to true, computed property can track a streak out of 10 questions
 				this.questions[index].rightAnswer = true;
-
+				
+				if (this.timer + 5 < 30) {
+					this.timer += 5;
+				}
 				this.score++;
 			} else {
 				// Mark users answer as wrong answer
 				event.target.classList.add("wrongAnswer");
 				this.questions[index].rightAnswer = false;
+				this.timer -= 3;
 
 				// Show right Answer
 				let correctAnswer = this.questions[index].correct_answer;
@@ -245,7 +254,8 @@ export default {
 				"Time remaining: " + this.timer;
 			let interval = setInterval(() => {
 				this.timer--;
-				if (this.timer === 0 || !this.playing) {
+				if (this.timer <= 0 || !this.playing) {
+					this.timer = 0;
 					document.getElementById("quiz").hidden = true;
 					document.getElementById("score").hidden = false;
 					document.getElementById("score").innerHTML =
