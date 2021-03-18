@@ -12,6 +12,15 @@
 			@click.prevent="startQuiz"
 			value="Start Quiz"
 		/>
+<<<<<<< HEAD
+=======
+		<button id="custom-quiz" @click.prevent="customQuizInput">
+			Custom Quiz
+		</button>
+		<input id="file-input" type="file" accept=".txt" hidden="true" />
+		<button id="choose-file" hidden="true">Upload Your Custom Quiz</button>
+		<input id="submit" type="submit" hidden="true" />
+>>>>>>> parent of 58f1dfb... Custom Quiz option front-end
 		<div id="quiz" hidden="true">
 			<h1 v-html="loading ? 'Loading...' : currentQuestion.question"></h1>
 			<!-- here we use the ternary operator to check the loading property -->
@@ -260,6 +269,30 @@ export default {
 					"Time remaining: " + this.timer;
 			}, 1000);
 		},
+<<<<<<< HEAD
+=======
+		customQuizInput() {
+			document.getElementById("start-quiz").hidden = true;
+			document.getElementById("custom-quiz").hidden = true;
+			const fileInput = document.getElementById("file-input");
+			const inputButton = document.getElementById("choose-file");
+			const submitButton = document.getElementById("submit");
+
+			inputButton.hidden = false;
+			submitButton.hidden = false;
+
+			inputButton.addEventListener("click", fileInput.click());
+			fileInput.addEventListener("change", function () {
+				if (fileInput.value) {
+					fileInput.innerHTML = fileInput.value.str
+						.split(/(\\|\/)/g)
+						.pop();
+				} else if (fileInput.value.split.pop() != ".txt") {
+					fileInput.innerHTML = "Invalid File Type";
+				}
+			});
+		},
+>>>>>>> parent of 58f1dfb... Custom Quiz option front-end
 	},
 	// We want the Component to fetch and store the data, when the Component mounts
 	mounted() {
@@ -278,6 +311,10 @@ form {
 
 button {
 	font-size: 1.1rem;
+<<<<<<< HEAD
+=======
+	font-weight: bold;
+>>>>>>> parent of 58f1dfb... Custom Quiz option front-end
 	box-sizing: border-box;
 	padding: 1rem;
 	margin: 0.3rem;
@@ -402,8 +439,14 @@ h1 {
 	box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
+<<<<<<< HEAD
 #start-quiz {
 	font-size: 1.1rem;
+=======
+input {
+	font-size: 1.1rem;
+	font-weight: bold;
+>>>>>>> parent of 58f1dfb... Custom Quiz option front-end
 	box-sizing: border-box;
 	padding: 1rem;
 	margin: 1rem;
@@ -412,5 +455,9 @@ h1 {
 	border: none;
 	border-radius: 0.4rem;
 	box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
+<<<<<<< HEAD
+=======
+	cursor: pointer;
+>>>>>>> parent of 58f1dfb... Custom Quiz option front-end
 }
 </style>
