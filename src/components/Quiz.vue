@@ -43,7 +43,7 @@ export default {
 			playing: true,
 			index: 0, // initialize index at 0
 			score: 0,
-			timer: 10,
+			timer: 25,
 		};
 	},
 	computed: {
@@ -217,7 +217,7 @@ export default {
 				// Mark users answer as wrong answer
 				event.target.classList.add("wrongAnswer");
 				this.questions[index].rightAnswer = false;
-				this.timer -= 3;
+				this.timer -= 2;
 
 				// Show right Answer
 				let correctAnswer = this.questions[index].correct_answer;
